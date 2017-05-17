@@ -3,9 +3,6 @@ import time
 import requests
 
 class ScheduleApiError(Exception):
-    '''
-    Raised if there is an error with the schedule API.
-    '''
     pass
 
 # The base API endpoint
@@ -15,12 +12,7 @@ base_url = 'http://umich-schedule-api.herokuapp.com/v4'
 timeout_duration = 25
 
 def get_data(relative_path):
-    '''
-    Gets data from the schedule API at the specified path.
-    Will raise a ScheduleApiError if unsuccessful.
-    Assumes API will return JSON, returns as a dictionary.
-    '''
-
+    
     timeout_at = time.time() + timeout_duration
 
     while time.time() < timeout_at:
@@ -34,10 +26,6 @@ def get_data(relative_path):
         .format(relative_path, r.text, r.status_code))
 
 def get_sections(TermCode, SchoolCode, SubjectCode, CatalogNumber):
-    '''
-    Returns SectionType, SectionTypeDescr, CreditHours, EnrollmentStatus, EnrollmentTotal, WaitTotal, Instructors,
-    Available Seats, SectionNumber, Meetings, WaitCapacity, EnrollmentCapacity
-    '''
 
     return get_data('/get_sections?term_code=' + TermCode + '&school=' + SchoolCode + '&subject='
      + SubjectCode + '&catalog_num=' + CatalogNumber)
