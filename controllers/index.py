@@ -10,8 +10,8 @@ from apscheduler.schedulers.background import BackgroundScheduler
 section_info = {    "term_code": "2160",
                     "school_code": "ENG",
                     "subject_code": "EECS",
-                    "catalog_num": "183",
-                    "section_type": "LEC"
+                    "catalog_num": "280",
+                    "section_type": "LAB"
                 }
 
 def get_open_seats(section_list, section_type):
