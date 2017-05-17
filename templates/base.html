@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/menuStyles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/defaultStyles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/tableStyles.css">
+    <link rel="shortcut icon" href="/static/images/favicon.ico"> {% block head %}
+    <title>Web Scheduler</title>
+    {% endblock %}
+
+</head>
+
+<body>
+    <div class="menu" id="topMenu">
+        <img src="/static/images/BlockM.png" id="logo" alt="UMich Logo" width="52" height="33">
+        <a href="/">Home</a>
+        <a href="/browse">Browse Courses</a>
+        <a href="https://eecs183.org/">EECS 183</a>
+        <a href="https://www.lsa.umich.edu/cg/">LSA Course Guide</a>
+        <a href="https://wolverineaccess.umich.edu/f/u24l1s63/normal/render.uP">Wolverine Access</a>
+    </div>
+
+    <div id="backBox">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        {% block footer %} Developed by: Aakash Patel, Bhavya Sukhavasi, Caitlin Gonzales, and Neil Shah <br> EECS 183 2017 {% endblock %}
+    </div>
+</body>
+
+</html>

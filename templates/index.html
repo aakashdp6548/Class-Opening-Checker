@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>I really hope this works</title>
+</head>
+
+<body>
+    <div>
+        <strong>Checking openings for {{section_info["term_code"]}} {{section_info["school_code"]}}
+            {{section_info["subject_code"]}} {{section_info["catalog_num"]}} ({{section_info["section_type"]}})</strong><br>
+        {% for section in open_sections %}
+            {{section}}<br>
+        {% endfor %}
+
+</body>
+
+</html>
