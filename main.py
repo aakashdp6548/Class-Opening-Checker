@@ -3,15 +3,13 @@ from datetime import datetime
 import time
 import os
 import logging
-import sys
-from termcolor import cprint, colored
 from apscheduler.schedulers.background import BackgroundScheduler
 
 section_info = {    "term_code": "2160",
                     "school_code": "ENG",
                     "subject_code": "EECS",
                     "catalog_num": "280",
-                    "section_type": "a"
+                    "section_type": "LAB"
                 }
 
 def get_open_seats(section_list, section_type):
@@ -45,7 +43,10 @@ if __name__ == '__main__':
     print "Checking openings for %s %s %s %s (%s)" % ( section_info["term_code"], section_info["school_code"], section_info["subject_code"], section_info["catalog_num"], section_info["section_type"] )
     logging.basicConfig()
     scheduler = BackgroundScheduler()
-    scheduler.add_job(print_open_sections, 'interval', hours=2)
+    # run now
+    scheduler.add_job(print_open_sections, 'date')
+    # run every hour
+    scheduler.add_job(print_open_sections, 'interval', hours=1)
     scheduler.start()
 
     try:
