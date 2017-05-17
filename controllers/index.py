@@ -25,18 +25,6 @@ def get_open_seats(section_list, section_type):
 
     return open_classes
 
-# def print_open_sections():
-#
-#     sections = get_sections("2160", "ENG", "EECS", "280")
-#     open_sections = get_open_seats(sections, section_info["section_type"])
-#
-#     if len(open_sections) != 0:
-#         print time.strftime("%H:%M:%S")
-#         for section in open_sections:
-#             print "Section " + str(section) + ": " + str(open_sections[section])
-#     else:
-#         print time.strftime("%H:%M:%S"), "No open sections found"S
-
 @app.route('/')
 def index():
 

@@ -1,3 +1,4 @@
+'''
 from schedule_api import *
 from datetime import datetime
 import time
@@ -56,3 +57,4 @@ if __name__ == '__main__':
     except (KeyboardInterrupt, SystemExit):
         # Not strictly necessary if daemonic mode is enabled but should be done if possible
         scheduler.shutdown()
+'''
